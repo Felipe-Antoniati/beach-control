@@ -1,0 +1,40 @@
+.card {
+  padding: 1.2rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.25rem;
+  color: var(--color-dark-purple);
+  background-color: var(--color-ghost-white);
+}
+.card h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card p {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.card.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.card.in-use p,
+.card.total p {
+  color: var(--color-dark-purple);
+}
+
+.card.total img {
+  width: 2.6rem;
+}
+
+.card.free {
+  color: var(--color-ghost-white);
+  background-color: var(--color-dark-purple);
+}

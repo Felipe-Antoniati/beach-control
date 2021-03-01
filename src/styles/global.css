@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+:root {
+  --color-dark-purple: #363f5f;
+  --color-light-purple: #5167b9;
+
+  --color-dark-blue: #185981;
+  --color-normal-blue: #228bcc;
+  --color-light-blue: #269be4;
+
+  --color-dark-red: #a51010;
+  --color-light-red: #e01616;
+
+  --color-ghost-white: #ebebff;
+  --color-bkg-light: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 93.75%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: var(--color-bkg-light);
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 1.6rem;
+  color: var(--color-bkg-light);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-light-blue);
+}
+
+p {
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: var(--color-ghost-white);
+}
+
+a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--color-normal-blue);
+}
+
+button {
+  width: 100%;
+  border: none;
+  font-size: 1.6rem;
+  padding: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  color: #333;
+  padding: 0 24px;
+  font-size: 1.4rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--color-ghost-white);
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  width: min(90vw, 800px);
+  margin: auto;
+}

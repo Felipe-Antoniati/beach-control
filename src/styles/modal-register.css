@@ -1,0 +1,54 @@
+#modal-register {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+#modal-register.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  padding: 2.4rem;
+  max-width: 500px;
+  width: 90%;
+  background-color: var(--color-ghost-white);
+}
+
+.modal h2 {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+}
+
+/* === Form === */
+#form {
+  width: 100%;
+}
+
+#form form input {
+  border: none;
+  border-radius: 0.2rem;
+  background-color: white;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.input-group {
+  margin-top: 1rem;
+}
+
+.input-group small {
+  opacity: 0.2;
+}
