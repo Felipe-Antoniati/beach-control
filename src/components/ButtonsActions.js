@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ButtonsActions({...props}) {
+export default function ButtonsActions({saveClose, ...props}) {
   return (
     <div className="input-group actions">
       <button 
@@ -13,6 +13,7 @@ export default function ButtonsActions({...props}) {
       <button 
         type="submit" 
         className="btn-save"
+        onClick={saveClose}
       >
         Salvar
       </button>

@@ -6,9 +6,11 @@ export default function Select({
 }) {
   return (
     <div className="select-block">
-      <label {...props}>{label}</label>
+      <label htmlFor={name} {...props}>
+        {label}
+      </label>
       <select id={name} {...props}>
-        <option disabled hidden>
+        <option value="" disabled hidden>
           Selecione uma opção
         </option>
         {options.map((option) => {

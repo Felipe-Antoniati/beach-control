@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import {Link, useHistory } from "react-router-dom";
 import api from "../services/api";
 
-import Card from "../components/Card";
 import Logo from "../components/Logo";
-import ModalTotal from "../components/ModalTotal";
 import ModalRegister from "../components/ModalRegister";
 import ButtonsActions from "../components/ButtonsActions";
 
@@ -16,14 +14,14 @@ import "../styles/home.css";
 
 export default function Home() {
   const [records, setRecords] = useState([]);
+  const [total, setTotal] = useState([]);
+  const [updateTotal, setUpdateTotal] = useState(0);
   const [openModalTotal, setOpenModalTotal] = useState("");
   const [openModalRegister, setOpenModalRegister] = useState("");
 
   const history = useHistory();
   const userName = localStorage.getItem("userName");
   const userId = localStorage.getItem("userId");
-
-
 
   useEffect(() => {
     api
@@ -34,9 +32,23 @@ export default function Home() {
       })
       .then(response => {
         setRecords(response.data);
-      });
-  }, [userId]);
+      }).then(
+        
+      );
+  }, [userId]);  
 
+  useEffect(() => {
+    api.get("beach-umbrellas", {
+      headers: {
+        Authorization: userId,
+      }
+    }).then((response) => {
+      setTotal(
+        response.data.totalBeachUmbrellas[0].total
+      );
+    })
+  })
+  
   function activeModalTotal() {
     setOpenModalTotal("active");
   }
@@ -72,14 +84,39 @@ export default function Home() {
 
   return (
     <div className="header-page">
-      <ModalTotal state={openModalTotal}>
-       <ButtonsActions 
-        onClick={removeActiveModalTotal} 
-      />
-      </ModalTotal>
+    <div id="modal-total" className={openModalTotal}>
+        <div className="modal">
+          <div id="form">
+            <h2>Adicione o Total de Guarda-sóis</h2>
+            <form action="">
+              <div className="input-group">
+                <label htmlFor="total" className="sr-only">
+                  Guarda-sóis
+                </label>
+                <input
+                  type="number"
+                  id="total"
+                  name="total"
+                  placeholder="Total de Guarda-sóis"
+                  value={updateTotal}
+                  onChange={e => setUpdateTotal(e.target.value)}
+                />
+              </div>
+              <button 
+                type="submit"
+                className="btn-save"
+                onClick={removeActiveModalTotal}
+              >
+                Adicionar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
       <ModalRegister state={openModalRegister}>
         <ButtonsActions 
           onClick={removeActiveModalRegister} 
+          saveClose={removeActiveModalRegister}
         />
       </ModalRegister>
       <header className="header-home">
@@ -95,30 +132,43 @@ export default function Home() {
       <main className="container">
         <section id="balance">
           <h2 className="sr-only">Visão Geral</h2>
-          <Card
-            cardName="card total"
-            description="Guarda-sóis"
-            id="totalUmbrellas"
-            valueOptions={0}
-          >
-            <FaCog 
-              size={26} 
-              className="add-content" 
-              onClick={activeModalTotal} 
-            />
-          </Card>
-          <Card
-            cardName="card in-use"
-            description="Em uso"
-            id="umbrellasInUse"
-            valueOptions={0}
-          />
-          <Card
-            cardName="card free"
-            description="Livres"
-            id="freeUmbrellas"
-            valueOptions={0}
-          />
+         
+          <div className="card total">
+            <div>
+              <h3>
+                <span>Guarda-sóis</span>
+              </h3>
+              <p className="totalUmbrellas">
+                {total}
+              </p>
+            </div>
+              <FaCog 
+                size={26} 
+                className="add-content"
+                onClick={activeModalTotal}
+              />
+          </div>
+
+          <div className="card in-use">
+            <div>
+              <h3>
+                <span>Em uso</span>
+              </h3>
+              <p className="umbrellasInUse">
+                {records.length}
+              </p>
+            </div>
+          </div>
+          <div className="card free">
+            <div>
+              <h3>
+                <span>Livres</span>
+              </h3>
+              <p className="freeUmbrellas">
+                {total - records.length}
+              </p>
+            </div>
+          </div>
         </section>
         <button 
           type="button " 
@@ -147,7 +197,12 @@ export default function Home() {
             <tbody>
               {records.map((record) => (
                 <tr key={record.id}>
-                  <td className="property">
+                  <td className={
+                    record.description 
+                    === "Proprietário" 
+                    ? "property" 
+                    : "locatary"
+                  }>
                     {record.description}
                   </td>
                   <td className="umbrellaNumber">
@@ -173,4 +228,4 @@ export default function Home() {
       </main>
     </div>
   );
-}
+};
