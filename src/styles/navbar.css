@@ -1,0 +1,44 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-normal-blue);
+}
+.nav-content {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  justify-content: space-between;
+  border-bottom: 0.1rem solid  rgba(255, 255, 255, 0.6);
+  ;
+}
+
+.navbar h1 {
+  margin-left: 1rem;
+  font-size: 1.1rem;
+}
+
+.navbar h1 span {
+  font-weight: bold;
+  margin-left: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.navbar img {
+  width: 3rem;
+}
+
+.btn-logout {
+  color: var(--color-bkg-light);
+  font-size: 1.2rem;
+}
+
+.btn-logout:hover {
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+}

@@ -1,16 +1,19 @@
 .header-home {
-  text-align: center;
   padding: 2rem 0 7rem;
   background-color: var(--color-normal-blue);
 }
-.header-home .logo-image {
-  width: 7rem;
+
+.ads-one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
+  border-radius: 0.25rem;
+  background-color: var(--color-light-blue);
 }
 
-.header-home .welcome {
-  font-size: 1.6rem;
-  margin-top: 0;
-  color: var(--color-ghost-white);
+.ads-one h2 {
+  color: rgba(238, 238, 238, 0.5);
 }
 
 #balance {
@@ -72,6 +75,7 @@
 
 #data-table {
   width: 100%;
+  margin-bottom: 2rem;
   border-spacing: 0 0.5rem;
   color: var(--color-dark-blue);
 }
@@ -321,4 +325,21 @@ td.locatary {
 .card.free {
   color: var(--color-ghost-white);
   background-color: var(--color-dark-purple);
+}
+
+footer .footer-home{
+  background-color: var(--color-ghost-white);
+}
+
+.ads-two {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  border-radius: 0.25rem;
+  background-color: var(--color-ghost-white);
+}
+
+.ads-two h2 {
+  color: #b8b8b8;
 }

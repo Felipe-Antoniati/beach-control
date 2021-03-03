@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {Link, useHistory } from "react-router-dom";
+import {useHistory } from "react-router-dom";
 import api from "../services/api";
 
+import Navbar from "../components/Navbar";
 import Logo from "../components/Logo";
 import ModalRegister from "../components/ModalRegister";
 import ButtonsActions from "../components/ButtonsActions";
@@ -138,15 +139,11 @@ export default function Home() {
           saveClose={removeActiveModalRegister}
         />
       </ModalRegister>
+      <Navbar user={userName} click={handleLogout}/>
       <header className="header-home">
-        <Link to="/" onClick={handleLogout}>
-          <span>Sair</span>          
-        </Link>
-        <Logo />
-        <p className="welcome">
-          Seja bem vindo(a),
-          {userName}
-        </p>
+        <div className="ads-one container">
+          <h2>Anuncio Google Ads</h2>
+        </div>
       </header>
       <main className="container">
         <section id="balance">
@@ -245,6 +242,11 @@ export default function Home() {
           </table>
         </section>
       </main>
+      <footer className="footer-home">
+        <div className="ads-two container">
+          <h2>Anuncio Google Ads</h2>
+        </div>
+      </footer>
     </div>
   );
 };
