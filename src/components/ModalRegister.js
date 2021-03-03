@@ -71,20 +71,20 @@ export default function ModalRegister({state, children}) {
                 onChange={(e) => setApartmentNumber(e.target.value)}
               />
             </div>
-            <div className="input-group">
-              <label htmlFor="umbrella"> 
-                Guarda Sol 
-              </label>
-              <input
-                maxLength={3}
-                type="text"
-                id="umbrella"
-                name="umbrella"
-                placeholder="Número do Guarda sol"
-                value={beach_umbrella}
-                onChange={(e) => setBeachUmbrella(e.target.value)}
-              />
-            </div>
+              <div className="input-group">
+                <label htmlFor="umbrella"> 
+                  Guarda Sol 
+                </label>
+                <input
+                  maxLength={3}
+                  type="text"
+                  id="umbrella"
+                  name="umbrella"
+                  placeholder="Número do Guarda sol"
+                  value={beach_umbrella}
+                  onChange={(e) => setBeachUmbrella(e.target.value)}
+                />
+              </div>
             {children}
           </form>
         </div>

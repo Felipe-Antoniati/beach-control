@@ -193,7 +193,7 @@ td.locatary {
 }
 
 .modal h2 {
-  margin-top: 0;
+  margin-top: 1.6rem;
 }
 
 #form {
@@ -204,7 +204,7 @@ td.locatary {
   border: none;
   border-radius: 0.2rem;
   background-color: white;
-
+  margin-bottom: 1.6rem;
   padding: 0.8rem;
   width: 100%;
 }
@@ -228,6 +228,23 @@ td.locatary {
 .input-group.actions .btn-cancel {
   width: 48%;
 }
+
+.header-form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+} 
+
+.close-total {
+  color: var(--color-dark-red);
+}
+
+.close-total:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: var(--color-light-red);
+}
+
 .btn-save {
   height: 50px;
   display: flex;

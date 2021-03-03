@@ -7,15 +7,15 @@ import ModalRegister from "../components/ModalRegister";
 import ButtonsActions from "../components/ButtonsActions";
 
 import { 
-  FaCog, FaMinusCircle, FaUmbrellaBeach 
+  FaCog, FaMinusCircle, FaUmbrellaBeach, FaRegWindowClose 
 } from "react-icons/fa";
 
 import "../styles/home.css";
 
 export default function Home() {
   const [records, setRecords] = useState([]);
-  const [total, setTotal] = useState([]);
-  const [updateTotal, setUpdateTotal] = useState(0);
+  const [getTotal, setGetTotal] = useState([]);
+  const [total, setTotal] = useState("");
   const [openModalTotal, setOpenModalTotal] = useState("");
   const [openModalRegister, setOpenModalRegister] = useState("");
 
@@ -43,11 +43,11 @@ export default function Home() {
         Authorization: userId,
       }
     }).then((response) => {
-      setTotal(
-        response.data.totalBeachUmbrellas[0].total
+      setGetTotal(
+        response.data.totalBeachUmbrellas.pop().total
       );
     })
-  })
+  }, [userId])
   
   function activeModalTotal() {
     setOpenModalTotal("active");
@@ -77,6 +77,19 @@ export default function Home() {
     }
   }
 
+  async function handleTotal(e) {
+    e.preventDefault();
+    const addTotal = { 
+      total
+    };
+    api.post("beach-umbrellas", addTotal, {
+      headers: {
+        Authorization: userId,
+      }
+    });
+    window.location.reload();
+  }
+
   function handleLogout() {
     localStorage.clear();
     history.push("/");
@@ -87,25 +100,31 @@ export default function Home() {
     <div id="modal-total" className={openModalTotal}>
         <div className="modal">
           <div id="form">
+          <div className="header-form">
+            <FaRegWindowClose 
+              size={26}
+              className="close-total"
+              onClick={removeActiveModalTotal}
+            /> 
+          </div>
             <h2>Adicione o Total de Guarda-sóis</h2>
-            <form action="">
+            <form action="" onSubmit={handleTotal}>
               <div className="input-group">
                 <label htmlFor="total" className="sr-only">
                   Guarda-sóis
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   id="total"
                   name="total"
                   placeholder="Total de Guarda-sóis"
-                  value={updateTotal}
-                  onChange={e => setUpdateTotal(e.target.value)}
+                  value={total}
+                  onChange={e => setTotal(e.target.value)}
                 />
               </div>
               <button 
                 type="submit"
-                className="btn-save"
-                onClick={removeActiveModalTotal}
+                className="btn-save add"
               >
                 Adicionar
               </button>
@@ -139,7 +158,7 @@ export default function Home() {
                 <span>Guarda-sóis</span>
               </h3>
               <p className="totalUmbrellas">
-                {total}
+                {getTotal}
               </p>
             </div>
               <FaCog 
@@ -165,7 +184,7 @@ export default function Home() {
                 <span>Livres</span>
               </h3>
               <p className="freeUmbrellas">
-                {total - records.length}
+                {getTotal - records.length}
               </p>
             </div>
           </div>
@@ -205,11 +224,11 @@ export default function Home() {
                   }>
                     {record.description}
                   </td>
-                  <td className="umbrellaNumber">
-                    {record.beach_umbrella}
-                  </td>
                   <td className="apartmentNumber">
                     {record.apartment_number}
+                  </td>
+                  <td className="umbrellaNumber">
+                    {record.beach_umbrella}
                   </td>
                   <td className="btn-remove">
                     <FaMinusCircle 
