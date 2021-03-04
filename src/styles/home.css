@@ -3,19 +3,6 @@
   background-color: var(--color-normal-blue);
 }
 
-.ads-one {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 7rem;
-  border-radius: 0.25rem;
-  background-color: var(--color-light-blue);
-}
-
-.ads-one h2 {
-  color: rgba(238, 238, 238, 0.5);
-}
-
 #balance {
   margin-top: -4rem;
 }
@@ -25,52 +12,57 @@
   margin-top: 0;
 }
 
-.add-content {
-  width: 2.6rem;
-  height: 2.6rem;
+.card {
+  padding: 1.2rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.25rem;
+  color: var(--color-dark-purple);
+  background-color: var(--color-ghost-white);
+}
+.card h3 {
+  font-size: 1rem;
+  font-weight: bold;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.add-content:hover {
-  cursor: pointer;
-  transform: scale(1.1);
+.card p {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.card.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card.in-use p,
+.card.total p {
+  color: var(--color-dark-purple);
+}
+
+.card.total img {
+  width: 2.6rem;
+}
+
+.card.free {
+  color: var(--color-ghost-white);
+  background-color: var(--color-dark-purple);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.6rem;
 }
 
 #records {
   width: 100%;
   display: block;
   overflow-x: auto;
-}
-
-.btn-record {
-  width: 100%;
-  height: 4rem;
-  display: flex;
-  font-weight: bold;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  background-color: transparent;
-  color: var(--color-dark-purple);
-  border: 2px solid var(--color-dark-purple);
-  transition: 0.7s;
-}
-
-.btn-record:hover span{
-  transform: scale(1.03);
-}
-
-.btn-record:hover {
-  color: var(--color-light-purple);
-  border: 2px solid var(--color-light-purple);
-  /* color: #FFF;
-  background-color: var(--color-dark-purple); */
-}
-
-.btn-record .icon-umbrella {
-  visibility: hidden;
 }
 
 #data-table {
@@ -127,14 +119,6 @@ td.locatary {
   color: var(--color-normal-blue);
 }
 
-.btn-remove {
-  color: var(--color-dark-red);
-}
-
-.btn-remove:hover {
-  color: var(--color-light-red);
-}
-
 @media (max-width: 650px) {
   .btn-record .icon-umbrella {
     visibility: visible;
@@ -149,186 +133,23 @@ td.locatary {
     gap: 3rem;
     margin-top: -4rem;
   }
-  .header-home .welcome {
-    margin-top: 2rem;
-  }
-
-  .header-home p {
-    font-size: 1.4rem;
-    margin-top: 0.3rem;
-    color: var(--color-ghost-white);
-  }
-  .header-home h1 {
-    font-size: 2rem;
-    margin-top: 1.6rem;
-    font-weight: bold;
-  }
-
-  .header-home .logo-image {
-    width: 7rem;
-  }
 }
 
-#modal-total {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-  
-  opacity: 0;
-  visibility: hidden;
-}
-
-#modal-total.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal {
-  width: 90%;
-  max-width: 500px;
-  padding: 2.4rem;
+footer .footer-home {
   background-color: var(--color-ghost-white);
 }
 
-.modal h2 {
-  margin-top: 1.6rem;
-}
-
-#form {
-  width: 100%;
-}
-
-#form form input {
-  border: none;
-  border-radius: 0.2rem;
-  background-color: white;
-  margin-bottom: 1.6rem;
-  padding: 0.8rem;
-  width: 100%;
-}
-
-.input-group {
-  margin-top: 0.8rem;
-}
-
-.input-group small {
-  opacity: 0.4;
-}
-
-.input-group.actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 1.6rem;
-}
-
-.input-group.actions .btn-save,
-.input-group.actions .btn-cancel {
-  width: 48%;
-}
-
-.header-form {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-} 
-
-.close-total {
-  color: var(--color-dark-red);
-}
-
-.close-total:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-  color: var(--color-light-red);
-}
-
-.btn-save {
-  height: 50px;
+.ads-one {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-bkg-light);
-  background-color: var(--color-normal-blue);
+  height: 7rem;
   border-radius: 0.25rem;
-}
-
-.btn-save:hover {
   background-color: var(--color-light-blue);
 }
 
-.btn-save span {
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-
-.btn-cancel {
-  color: var(--color-dark-red);
-  border: 2px solid var(--color-dark-red);
-  border-radius: 0.25rem;
-  height: 50px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  opacity: 0.6;
-}
-
-.btn-cancel:hover {
-  color: var(--color-light-red);
-  border: 2px solid var(--color-light-red);
-}
-
-.card {
-  padding: 1.2rem 2rem;
-  margin-bottom: 2rem;
-  border-radius: 0.25rem;
-  color: var(--color-dark-purple);
-  background-color: var(--color-ghost-white);
-}
-.card h3 {
-  font-size: 1rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.card p {
-  font-size: 2rem;
-  line-height: 3rem;
-}
-
-.card.total {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
-}
-
-.card.in-use p,
-.card.total p {
-  color: var(--color-dark-purple);
-}
-
-.card.total img {
-  width: 2.6rem;
-}
-
-.card.free {
-  color: var(--color-ghost-white);
-  background-color: var(--color-dark-purple);
-}
-
-footer .footer-home{
-  background-color: var(--color-ghost-white);
+.ads-one h2 {
+  color: rgba(238, 238, 238, 0.5);
 }
 
 .ads-two {

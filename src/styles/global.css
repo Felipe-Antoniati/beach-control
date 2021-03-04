@@ -5,6 +5,7 @@
   --color-light-purple: #5167b9;
 
   --color-dark-blue: #185981;
+  --color-medium-blue: #1b6795;
   --color-normal-blue: #228bcc;
   --color-light-blue: #269be4;
 
@@ -49,27 +50,17 @@ p {
 }
 
 a {
-  font-size: 1.2rem;
   text-decoration: none;
-  color: var(--color-normal-blue);
-}
-
-button {
-  width: 100%;
-  border: none;
-  font-size: 1.6rem;
-  padding: 0;
-  border-radius: 0.25rem;
-  cursor: pointer;
 }
 
 input {
   width: 100%;
-  color: #333;
-  padding: 0 24px;
-  font-size: 1.4rem;
+  padding: 0.8rem;
+  border: none;
+  font-size: 1.6rem;
   border-radius: 0.25rem;
-  border: 1px solid var(--color-ghost-white);
+  color: #333;
+  background-color: white;
 }
 
 @media (min-width: 800px) {

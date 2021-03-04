@@ -1,0 +1,90 @@
+button {
+  font-size: 1.6rem;
+  width: 100%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.btn-save {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  color: var(--color-bkg-light);
+  background-color: var(--color-normal-blue);
+}
+
+.btn-save:hover {
+  background-color: var(--color-light-blue);
+}
+
+.actions .btn-save {
+  width: 49%;
+}
+
+.actions a {
+  width: 47%;
+  height: 3.3rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  align-items: center;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  color: var(--color-dark-red);
+  border: 2px solid var(--color-dark-red);
+  opacity: 0.7;
+  transition: 0.7s;
+}
+
+.actions a:hover {
+  opacity: 0.8;
+  color: var(--color-light-red);
+  border: 2px solid var(--color-light-red);
+}
+
+.add-content:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.btn-record {
+  height: 4rem;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  color: var(--color-dark-purple);
+  border: 2px solid var(--color-dark-purple);
+  transition: 0.7s;
+}
+
+.btn-record:hover span{
+  transform: scale(1.03);
+}
+
+.btn-record:hover {
+  color: var(--color-light-purple);
+  border: 2px solid var(--color-light-purple);
+}
+
+.btn-record .icon-umbrella {
+  visibility: hidden;
+}
+
+.btn-register {
+  height: 4rem;
+  margin-top: 1rem;
+  transition: 0.5s;
+  color: var(--color-bkg-light);
+  background-color: var(--color-dark-blue);
+}
+
+.btn-register:hover {
+  background-color: var(--color-medium-blue)
+}

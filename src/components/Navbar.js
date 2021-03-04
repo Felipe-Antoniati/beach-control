@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logoImg from "../assets/logo.svg";
 import "../styles/navbar.css";
 
-export default function Navbar({ user, children, click }) {
+export default function Navbar({ user, click }) {
   return (
     <div className="navbar">
       <div className="nav-content container">
@@ -14,10 +14,14 @@ export default function Navbar({ user, children, click }) {
             <span>{user}</span>
           </h1>
         </div>
-        <Link to="/" className="btn-logout" onClick={click}>
+        <Link 
+          to="/" 
+          className="btn-logout" 
+          onClick={click}
+        >
           Sair
         </Link>
       </div>
     </div>
   );
-}
+};

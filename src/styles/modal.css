@@ -1,0 +1,32 @@
+#modal-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+#modal-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  padding: 2.6rem;
+  max-width: 500px;
+  width: 90%;
+  background-color: var(--color-ghost-white);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+  color: var(--color-light-blue);
+}

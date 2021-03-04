@@ -3,6 +3,7 @@ import {Link, useHistory} from "react-router-dom";
 import {FiArrowLeft} from "react-icons/fi";
 
 import Logo from "../components/Logo";
+import Button from "../components/Button";
 import Waves from "../components/Waves";
 import api from "../services/api";
 
@@ -14,9 +15,8 @@ const [name, setName] = useState("");
 const [email, setEmail] = useState("");
 const [whatsapp, setWhatsapp] = useState("");
 const [password, setPassword] = useState("");
+
 const history = useHistory();
-
-
 
 async function handleRegister(e) {
   e.preventDefault();
@@ -35,6 +35,7 @@ async function handleRegister(e) {
   setPassword("");
   history.push("/");
 }
+
   return(
     <div className="register-page">
       <div className="back-link">
@@ -44,7 +45,7 @@ async function handleRegister(e) {
         </Link>
       </div>
       <div className="content">
-        <section>
+        <section className="content-left">
           <Logo />
           <p className="desc-register">
             Faça seu cadastro, entre na plataforma, e tenha o controle de quem
@@ -57,30 +58,43 @@ async function handleRegister(e) {
             <input
               placeholder="Nome da Empresa"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={
+                (e) => setName(e.target.value)
+              }
             />
             <input
               type="email"
               placeholder="E-mail"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={
+                (e) => setEmail(e.target.value)
+              }
             />
             <input
               placeholder="WhatsApp"
               value={whatsapp}
-              onChange={(e) => setWhatsapp(e.target.value)}
+              onChange={
+                (e) => setWhatsapp(e.target.value)
+              }
             />
             <input
               type="password"
               placeholder="Password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={
+                (e) => setPassword(e.target.value)
+              }
             />
-            <button className="btn-register" type="submit">
-              Cadastrar
-            </button>
+            <Button 
+              norm="submit" 
+              name="btn-register"
+              description="Cadastrar" 
+            /> 
           </form>
         </div>
+      </div>
+      <div className="ads-one container">
+        <h2>Anuncio Google Ads</h2>
       </div>
     <Waves />
     </div>

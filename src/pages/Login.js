@@ -3,6 +3,7 @@ import {Link, useHistory } from "react-router-dom";
 import api from "../services/api";
 
 import Logo from "../components/Logo";
+import Button from "../components/Button";
 import Waves from "../components/Waves";
 
 import "../styles/login.css";
@@ -37,21 +38,28 @@ export default function Login() {
             value={id}
             onChange={(e) => setId(e.target.value)}
           />
-          <button type="submit" className="btn-login">
-            Entrar
-          </button>
+          <Button 
+            norm="submit" 
+            name="btn-save" 
+            description="Entrar"
+          />
           <div className="fotter-form">
             <Link to="/register" className="link-register">
               <span>
                 Não tem Cadastro?
                 <br />
-                Cadastre agora.
+                Cadastre-se agora
               </span>
             </Link>
-            <strong>É de Graça!</strong>
+            <strong>
+              É de Graça!
+            </strong>
           </div>
         </form>
       </section>
+      <div className="ads-two container">
+          <h2>Anuncio Google Ads</h2>
+        </div>
     </div>
   );
 };

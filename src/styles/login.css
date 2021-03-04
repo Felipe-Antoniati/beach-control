@@ -3,11 +3,16 @@
   padding: 0.9rem;
   background-color: var(--color-normal-blue);
 }
-.header-login > div{
+.header-login > div {
   margin-top: 2rem;
 }
 .form-login h2 {
   margin-bottom: 1rem;
+}
+
+#login-page .ads-two {
+  margin-top: 1rem;
+  height: 6rem;
 }
 
 .form-login input {
@@ -18,25 +23,19 @@
   opacity: 0.8;
 }
 
-.form-login .btn-login {
-  height: 4rem;
-  margin-bottom: 1.6rem;
-  color: var(--color-bkg-light);
-  background-color: var(--color-normal-blue);
-}
-
-.form-login .btn-login:hover {
-  background-color: var(--color-light-blue);
-}
-
 .fotter-form {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-top: 1.6rem;
 }
 
 .fotter-form strong {
   opacity: 0.4;
+}
+
+.fotter-form a {
+  font-size: 1.2rem;
+  color: var(--color-light-blue); 
 }
 
 .fotter-form a:hover {
