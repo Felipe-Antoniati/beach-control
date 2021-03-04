@@ -13,6 +13,11 @@
   ;
 }
 
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
 .navbar h1 {
   margin-left: 1rem;
   font-size: 1.1rem;
@@ -36,9 +41,4 @@
 .btn-logout:hover {
   font-weight: bold;
   transform: scale(1.1);
-}
-
-.welcome {
-  display: flex;
-  align-items: center;
 }
